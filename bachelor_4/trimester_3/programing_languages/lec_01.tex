@@ -1,4 +1,4 @@
-\lecture{1}{di 12 sep 2023 19:41}{Lecture 1}
+\lecture{1}{di 12 sep 2023 19:41}{Compilers}
 \section{Bridging the gap}
 
 \begin{definition}
@@ -15,18 +15,52 @@ Ex. C, C++, Haskell, Rust
 Note: Some languages make use of a hybrid approach. First translating
 the source language to an intermediate language (abstract or virtual machine),
 then interpret that. 
-Examples: Java, C#
+Examples: Java, C\#
 
 \section{Stages of a compiler}
 
-\begin{itemize*}
+\begin{definition}
 The first stage of a compiler is called a lexer, which given an input string of source
 code , produces a stream of tokens or lexemes, discarding irrelevant information
 like whitepsace or comments.
-\end{itemize*}
+\end{definition}
+
+\begin{definition}
+ A parser converts the stream of tokens from the lexer
+    into a parse tree or abstract syntax tree.
+\end{definition}
 
 \begin{definition}
   The structure of lexemes expected to produce certain parse trees is called a grammar.
 \end{definition}
 
+\begin{definition}
+  Backus-Naur Form: Specify grammatical productions using a barebones.
+  recursive notation. Noneterminals are in italics whereas Terminals are in in boldface.
+  for examples can look up online but you've seen this in compilers plenty of times.
+\end{definition}
+
+Once there is an abstract syntax tree, symantic analysis is done:
+
+\subsection{Symantic Analysis}
+\begin{itemize}
+  \item Checks variable scoping.
+  \item Static semantic checks: most notably type checking.
+  \item Adds extra information to the tree.
+\end{itemize}
+
+Then we perform optimization
+\subsection{Opmitization}
+\begin{itemize}
+  \item Loop unrolling, loop fusion.
+  \item Inlining, specialization.
+  \item Sometimes transforms the tree dramatically.
+\end{itemize}
+
+\subsection{Code Generation}
+\begin{itemize}
+  \item Register allocation and explicit control flow.
+  \item Links runtime system (eg Garbage collector).
+  \item Selects appropriate machine instructions.
+\end{itemize}
 
