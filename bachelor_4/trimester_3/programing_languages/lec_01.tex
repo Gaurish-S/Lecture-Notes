@@ -1,0 +1,32 @@
+\lecture{1}{di 12 sep 2023 19:41}{Lecture 1}
+\section{Bridging the gap}
+
+\begin{definition}
+  A compiler translates from source code to a target language,
+  typically machine code. 
+\end{definition}
+Ex. C, C++, Haskell, Rust
+
+\begin{definition}
+ An interpreter executes a program as it reads the source code 
+ Examples: perl, python, javascript
+\end{definition}
+
+Note: Some languages make use of a hybrid approach. First translating
+the source language to an intermediate language (abstract or virtual machine),
+then interpret that. 
+Examples: Java, C#
+
+\section{Stages of a compiler}
+
+\begin{itemize*}
+The first stage of a compiler is called a lexer, which given an input string of source
+code , produces a stream of tokens or lexemes, discarding irrelevant information
+like whitepsace or comments.
+\end{itemize*}
+
+\begin{definition}
+  The structure of lexemes expected to produce certain parse trees is called a grammar.
+\end{definition}
+
+
