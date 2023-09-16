@@ -1,12 +1,47 @@
-\lecture{1}{di 12 sep 2023 01:59}{Lecture 1}
+\lecture{1}{di 12 sep 2023 01:59}{Introduction to groups}
 
-\section{Vector spaces}
+\section{Geometry}
 \begin{definition}
-  Vector spaces are awesome. 
+  Felix Klien's geometry is a set \( S \), called a space
+  on which a group \( G \) operates. The study of properties invariant
+  under the operations of \( G \) is called geometry. 
 \end{definition}
 
-\begin{intuition}
-  \( x = x + y\)
-\end{intuition}
-only holds true for \( y = 0 \)
+\subsection{Geometries v. Groups}
+\begin{center}
+\begin{tabular}{ c c c c c}
+  Space & Tranf. grps & Geometry & Invariants & Linear groups \\
+  \( \mathbb{R}^n \) & isometries & euclidean g & distance & \( O_n{\mathbb{R}} \) \\
+  \( \mathbb{R}^n \) & similarities & Similaritiy g. & angle & \( \mathbb{R}_{>0} O_n{\mathbb{R}}\) \\
+  \( \mathbb{R}^n \) & colllineations & affine g. & parallelism & \(GL_n(\mathbb{R})\) \\
+  \( \mathbb{R}^nP \) & projective transf & Projective g. & collinearity & \( PGL_{n+1}(\mathbb{R})\)
+\end{tabular}
+\end{center}
+and many more...
+but these are the only ones we will talk about.
+
+\begin{definition}
+  A transformation on \( \mathbb{R}^n \) is a bijection from \( \mathbb{R} \) to \( \mathbb{R} \).
+  We will denote by \( \mathscr{B}(\mathbb{R}^n) \) the set of all transformations on \(\mathbb{R}^n\).
+\end{definition}
+
+\begin{definition}
+  A transformation on the euclidean plane is called a plane transformation.
+\end{definition}
+
+ \begin{itemize}
+  \item A linear isomorphism is a transformation but a linear map may not. 
+  \item The identity map \( 1: \mathbb{R}^n \to \mathbb{R}^n \) is a transformation.
+  \item Fix \( \boldsymbol{a}. \). The map \( \boldsymbol{T_b}: \mathbb{R}^n \to \mathbb{R}^n  \), is called a translation.
+  and a translation is a transformation. A more geometric way to view a transformation is as follows: The map
+  takes a point $P$ to the point $P'$ such that the vector \( \overrightarrow{PP'} = \boldsymbol{b}\).
+  We denote a translation that takes \( P to P' \) by \( \tau_{PP'} \coloneqq  T_b\)
+ \end{itemize}
+
+ \begin{notation}
+  The map \[
+    T_{A \boldsymbol{b}}: \mathbb{R}^n \to \mathbb{R}^n, \boldsymbol{v} \mapsto A \boldsymbol{x} + \boldsymbol{b}
+  .\] 
+ \end{notation}
+
  
