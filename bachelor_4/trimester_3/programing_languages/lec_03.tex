@@ -1,0 +1,23 @@
+\lecture{3}{Mon 18 sep 2023 15:08}{Tut2}
+
+1. State the formal properties of the left identity, right identity
+and associativity for \( ++ \). \newline
+Sol. 
+
+\begin{itemize}
+  \item \( [\;]++ys = ys \) 
+  \item \( ys++[\;] = ys \) 
+  \item \( (xs++ys)++zs =xs++(ys++zs)\) 
+\end{itemize}
+
+\begin{proof}
+
+  \begin{itemize}
+    \item \( [\;] ++ ys = ys \) (given)
+    \item  To prove: \( ys ++ [\;] = ys \) \newline
+      LHS = [\;] ++ [\;] = [\;] therefore true for base case. \newline
+      Assume \( xs ++ [\;] = xs\)
+      Prove true for inductive case
+  \end{itemize}
+  
+\end{proof}

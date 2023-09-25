@@ -1,0 +1,143 @@
+\lecture{2}{Mon 18 sep 2023 12:08}{}
+
+\section{Formalization}
+
+\begin{definition}
+  Formalization is the process of giving a language a formal, mathematical description.
+
+  Typically described in another language (meta-language.) For implementation it may be a programming language.
+  Eg. Haskell
+\end{definition}
+
+
+\begin{definition}
+  Object language: the language we're describing.
+\end{definition}
+
+\begin{definition}
+  Meta-language - The language we're using to describe the object language.
+\end{definition}
+
+Things to formalize in programming languages:
+\begin{itemize}
+  \item Static semantics - scoping, typing.
+  \item Dynamic Semantics - cost models, runtime behavior.
+  \item Syntax - parsing, grammar.
+\end{itemize}
+
+There is a correspondence with formlising logics.
+
+What logicians needed to formalize logic.
+
+\begin{itemize}
+  \item Well formedness - scoping, typing 
+  \item Logical Models - proof models, truth models.
+  \item Syntax - Ambiguity, grammar etc.
+\end{itemize}
+
+\section{Judgements}
+
+\begin{definition}
+  A judgement is a statement asserting a certain property for an object.
+\end{definition}
+
+Note: not necessarily a true assertion.
+
+\begin{notation}
+  judgement for property \( A \) holds for object \( s \) by writing \( sA \).
+\end{notation}
+
+\subsection{Proving Judgements}
+
+we prove judgements by inference rules. Inference rules are crafting recipes for judgements.
+
+\begin{notation}
+  Inference rule is written as:
+  \[
+    \frac{J_1 \: J_2 \:\ldots \: J_n}{J}
+  .\] 
+
+  In order to prove \( J \) (conclusion), we must prove \( J_i \) (premises) where  \( i \in \{1, 2,\ldots n\}   \).
+  Rules with no premises are called axioms.
+\end{notation}
+
+Continually decompose your conclusion by applying inference rules. Until you reach a base case inference rule.
+
+When we define judgement by inference rules. we keep in mind that what is the 
+smallest set that is closed under inference rules or equivalently, 
+everything we can derive from the rules using finite proof trees.
+This is also what it means for a definition to be inductive.
+
+\begin{definition}
+  Backward-proof:
+  To prove judgement \( s A \) holds.
+  \begin{itemize}
+    \item Find a rule whose conclusion matches \( sA \)
+    \item Preconditions of applied rule become new proof obligations.
+    \item Repeat until all obligations are proven until axioms.
+  \end{itemize}
+\end{definition}
+
+\subsection{Derivability}
+
+\begin{definition}
+  A rule 
+  \[
+    \frac{J_1 \: J_{2}\: \ldots J_n}{J}
+  .\] 
+  is derivable if, using the original (defining) set of rules, we can construct a proof of \( J \).
+\end{definition}
+
+\begin{definition}
+ A rule is admissible if, by adding it, we don't change the meaning of the judgement i.e does not add the set of statements which satisfy the judgement.
+\end{definition}
+
+\begin{definition}
+  by adding more rules, you make at least as many judgements derivable as before.
+\end{definition}
+
+\begin{notation}
+ \( A \vdash B\) is equivalent to \(  \frac{A}{B} \).
+\end{notation}
+\subsection{Hypothetical Derivation}
+
+\[
+  \frac{A \vdash B}{C}
+.\] 
+Read as: If assuming \( A \) we can derive \( B \), then we can derive \( C \).
+
+\begin{definition}
+  The smallest set of rules to define every string in a language is it's minimal definition.
+\end{definition}
+
+It is also an inductive definition of the language.
+
+\section{Rule Induction}
+
+Informal process:
+
+To show all strings are valid in \( M \)
+
+\begin{itemize}
+  \item prove \( P(base) \)
+  \item prove premise satisfies \( P \) \( \implies \) post condition satisfies \( P \).
+\end{itemize}
+
+\begin{definition}
+  Rule induction: Given a set of rules $R$, we may prove a property $P$ inductively for
+all judgements that can be inferred with $R$ by showing, for each
+rule of the form:
+
+\[
+  \frac{J_1 \: J_2 \: \ldots J_n }{J}
+.\] 
+that if \( P \) holds for premise then \( P \) holds for conclusion
+\end{definition}
+
+Note: axioms are the base cases of the induction, all other rules form
+inductive cases, and the premise for each rule give rise to inductive hypothesis.
+\newline
+Structural induction is a special case of rule induction.
+
+
+
