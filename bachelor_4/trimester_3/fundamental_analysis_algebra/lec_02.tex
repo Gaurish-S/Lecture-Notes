@@ -1,1 +1,444 @@
-\lecture{2}{Thu 12 sep 2023 19:44}{}
+\section{Recap}
+
+A group is a set \( G \) equipped with a multiplication \( * : G \times G \to G \) that
+satisfies Associativity, Existence of Identity and Inverse.
+
+\begin{itemize}
+  \item The group \( \mathscr{B}(\mathbb{R}^{n}) \) of all transformations in \( \mathbb{R}^{n} \)
+  \item The group \( \mathscr{T}(\mathbb{R}^{n}) \) of all translations in \( \mathbb{R}^{n} \)
+    recall \( T_{\mathbf{b}}: \mathbf{x} \to \mathbf{x} + \mathbf{b} \)
+    This group is a subgroup of \( \mathscr{B}(\mathbb{R}^{n}) \) is isomorphic to the group \((\mathbb{R}^{n}, +)\).
+    A mapping \( \tau : \mathbb{R}^{n} \to  \mathbb{R}^{n} \) is called an isometry if it preserves
+    distance between any two points. Any isometry is a transformation.
+
+  \item The set \( \mathscr{I}(\mathbb{R}^{n}) \) of all isometries in \( \mathbb{R}^{n} \) is a subgroup of \( \mathscr{B}(\mathbb{R}^{n}) \). It contains \( \mathscr{T}(\mathbb{R}^{n}) \)
+    as a subgroup.
+  \item If \( \tau : \mathbb{R}^{n} \to  \mathbb{R}^{n} \) is an isometry, then there exist and orthogonal \( n \times n \) matrix
+    \( Q \) and a vector \( \mathbf{b} \) such that \( \tau  \) has the following equation.
+    \[
+      \tau (\mathbf{x}) = Q \mathbf{x} + \mathbf{b}
+    .\] 
+  \item Some special isometries: translations, reflections in \( R^{n} \), glide reflections in \( \mathbb{R}^{n} \).
+\end{itemize}
+
+\section{Hyperplanes and Reflections}
+
+\begin{definition}
+  A hyperplance in \( \mathbb{R}^{n} \) is the translation \(\mathbb{H} = T_{a}(V)\) of an \( n-1 \) dimensional subspace \( V \).
+  If \( V \) is the orthogonal complement of a line parallel to \( \mathbf{n} \), i,e, \( V = \langle \mathbf{n}\rangle^{\bot} \) then \( V \) has equation \( \mathbf{n} \cdot \mathbf{x} = 0 \).
+  and, thus, \( \mathbb{H} \) has equation in point-normal form: \( \mathbf{n} \cdot \left(\mathbf{x} - \mathbf{a}  \right)\) or in
+  in cartesian form:
+  \[
+    n_{1}X_{1} + n_{2}X_{2} + \ldots + n_{n}X_{n} + c = 0
+  .\] 
+  where \( \mathbf{n}  \left( a_{1}, a_{2}, \ldots , a_{n} \right), \mathbf{c} = - \mathbf{n} \cdot \mathbf{a}\). In other words, every 
+  hyperplance \( \mathbb{H} \) is determined by its normal \( \mathbf{n} \) and a point \( A(\mathbf{a}) \) in \( \mathbb{H} \):
+  \[
+    \mathbb{H} = \mathbb{H}_{\mathbf{n}, \mathbf{a}} = \{\mathbf{x} \in \mathbb{R}^{n} \mid  \mathbf{n} \cdot(\mathbf{x} - \mathbf{a}) = 0\}
+  .\] 
+
+  In parametric vector form: \( \mathbf{x} = \mathbf{a} + \lambda_1\mathbf{a}_1 + \ldots + \lambda_{n-1} \mathbf{a}_{n-1} \), where
+  \( \mathbf{a}_1, \ldots \mathbf{a}_n \) form a basis for \( \langle \mathbf{n} \rangle^{\bot} \)
+\end{definition}
+
+\subsection{Reflections} 
+\begin{definition}
+  Let \( \mathbb{H} \). The reflection \( \sigma _{\mathbb{H} } \) in \( \mathbb{H} \) is the mapping defined by:
+\begin{equation*}
+\sigma_{\mathbb{H}} =
+    \begin{cases}
+      P   & \text{if  \( P \in \mathbb{H}; \)}  \\
+       P'  & \text{if if \( P  \) is off \( \mathbb{H} \) and \( \mathbb{H} \) is perpendicular bisector of \( \overline{PP'} \)} 
+    \end{cases}
+\end{equation*}
+
+(in the sense that \( d(P, X) = d \left( P', X \right) \) for all \( X \in \mathbb{H}\)) 
+\end{definition}
+
+\begin{proposition}
+ Let \( \mathbb{H} \)  be a hyperplance
+ \begin{enumerate}
+   \item A reflection \( \sigma_{\mathbb{H}} \) is an isometry satisfying \( \sigma_{\mathbb{H}} = 1\)
+    \item \( \sigma_{\mathbb{H}} \) fixes a line \( m \not \subseteq \mathbb{H} \) if and only if \( m \bot \mathbb{H} \).
+    \item \( \sigma_{\mathbb{H}} \) fixes a line pointwise if and only if \( m \not \subseteq \mathbb{H} \).
+ \end{enumerate}
+
+\end{proposition}
+
+ \begin{proof}
+   Let \( \mathbb{H} = \mathbb{H}_{\mathbf{n}, \mathbf{a}} \).
+
+   \begin{enumerate}
+     \item By definition, \( \sigma^{2}_{\mathbb{H}} = 1 \). Hence, it is a bijection by existence of inverse I think (Ask Lect). A  
+      For the proof of isometry, we may prove it geometrically mimicking the \( \mathbb{R}^{2} \) case, or
+        algebraically (to come.)
+      \item if \( m \bot \mathbb{H} \), it is clear \( \sigma_{\mathbb{H}}\left( m  \right) = m \) (Ask lect) .
+        Conversely, \( Q = \sigma_{\mathbb{H}}\left(P  \right) \) for some
+        \( P \in m \), but off \( \mathbb{H} \). Then \( Q \in m \) and the line segment 
+        \( \overline{PQ} \) is perpendicular to \( \mathbb{H} \)
+        (Ask Lect dont we get Q in m from knowing that PQ is perpendicular as reflection \( \to \) there is only on perpendicular form one pt so Q in m
+         This deduction seems to go in the opposite direction.)
+        Hence, \( m \bot \mathbb{H} \).
+      \item is clear: \( \sigma_{\mathbb{H}}= P  \) for all \( P \in m \iff m \subseteq \mathbb{H} \) ( Ask lect by definition ?)
+   \end{enumerate}
+  
+ \end{proof}
+
+ \subsubsection{General Reflection Formula}
+\begin{theorem}
+  If \( \mathbb{H} = \mathbb{H}_{\mathbf{n}, \mathbf{a}} \), the there exist \( Q = I - \frac{2}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} \mathbf{n}^{T} \in O_{n}\left(\mathbb{R}  \right)  \) and \( \mathbf{b} = 2 \frac{\mathbf{a} \cdot \mathbf{n}}{ \mathbf{n} \cdot \mathbf{n}}  \mathbf{n} \)
+
+  such that.
+  \[
+    \sigma_{\mathbb{H}}\left(\mathbf{x}  \right) = Q \mathbf{x} + \mathbf{b}
+  .\] 
+\end{theorem}
+
+\begin{proof}
+ By vector geometry (draw the expression below geometrically to see that it gives reflection),
+ \begin{align}
+   \sigma_{\mathbb{H}} \left(\mathbf{x}\right) &= \mathbf{a} + \left[  \left( \mathbf{x} - \mathbf{a} \right) - 2 \text{proj}_{\mathbf{n}} \left( \mathbf{x} - \mathbf{a} \right)\right] = \mathbf{x} - 2 \text{proj}_{\mathbf{n}} \left( \mathbf{x} - \mathbf{a} \right) \\
+                       &= \mathbf{x} - 2 \frac{\mathbf{x} \cdot \mathbf{n}}{ \mathbf{n} \cdot \mathbf{n}} \mathbf{n} + 2 \frac{\mathbf{a} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n}
+ .\end{align}
+\end{proof}
+
+Now the first assertion follows easily, noting
+\[
+  (\mathbf{x} \cdot \mathbf{n})\mathbf{n} = \left(\mathbf{n}^{T} \mathbf{x}  \right) \mathbf{n} 
+.\] 
+
+Note that \( (\mathbf{n}^{T} \mathbf{x}) \mathbf{n} \) is a scalar so using commutativity.
+\begin{align*}
+  \left(\mathbf{n}^{T} \mathbf{x}  \right) \mathbf{n} = \mathbf{n} \left(\mathbf{n}^{T} \mathbf{x}  \right) = \left(\mathbf{n} \mathbf{n}^{T}  \right) \mathbf{x}
+.\end{align*}
+
+Now continuing from (2) by substituting,
+
+\begin{align*}
+  &= \mathbf{x} - 2 \frac{(\mathbf{n} \mathbf{n}^{T})\mathbf{x}}{\mathbf{n} \cdot \mathbf{n}} + \frac{2 \mathbf{a} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} \\
+  &= \mathbf{x} \left( I - 2 \frac{(\mathbf{n} \mathbf{n}^{T})}{\mathbf{n} \cdot \mathbf{n}}   \right) + \frac{2 \mathbf{a} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} \\
+  &=  Q \mathbf{x} + \mathbf{b}
+.\end{align*}
+
+Since \( Q  \) is symmetric (difference between two symmetric matrices) and \( Q Q = I \) 
+% is normal here unit length now sure why the 2nd term of diff is symm. 
+
+\subsubsection{Reflections in \( \mathbb{R}^{2} \)}
+
+\begin{corollary}
+ In \( \mathbb{R}^{2} \), if line \( \ell \) has equation \( aX + bX + c = 0 \), then ther 
+ reflection \( \sigma_{\ell} \) has equation:
+ \begin{align*}
+   \sigma_{\ell}\left(\mathbf{x}  \right) &= \frac{1}{a^2 + b^2} \begin{bmatrix} b^{2} - a^{2} & -2ab \\ -2ab & a^2 + b^2 \end{bmatrix} \mathbf{x} + \frac{1}{a^2 + b^2} \begin{bmatrix} -2ac \\ -2bc \end{bmatrix}  \\
+                                          &= \begin{pmatrix} x \\ y \end{pmatrix} - \frac{1}{a^2 + b_{2}} \begin{pmatrix} 2a \left( ax + by + c \right) \\ 2b \left(ax + by + c  \right) \end{pmatrix} 
+ .\end{align*}
+
+\end{corollary}
+
+\begin{proof}
+ Here, \( \mathbf{n} = \begin{pmatrix} a \\ b \end{pmatrix}  \) and \( \mathbf{a} \cdot \mathbf{n} = -c\). Substituting gives the required
+ formula (substituting in the general reflection formula theorem before). Alternatively, let \( \mathbf{x}' = \sigma_{\ell} \left( \mathbf{x} \right) \). Then 
+ \( \mathbf{x'} - \mathbf{x} \) is parallel to \( \mathbf{n}\) and \( \frac{1}{2} \left( \mathbf{x}' + \mathbf{x} \right) \in  \ell\). Thus,
+ \( b(x' - x) = a \left( y' - y \right) \) and \( a \left( x' + x \right) + b \left( y' + y \right) + 2c  = 0\). Hence simplifying both equations,
+   \( bx' - ay' = bx + ay\) and \( ax' + by' = - \left( ax + by + 2c \right) \) which are two equations and two variables. Solving gives the 
+   second formula
+\end{proof}
+
+\subsubsection{Example reflection calculation}
+
+\begin{problem}
+ Find the equation of a reflection in the line tangent to the circle \( x^{2} + y_{2} = 25 \) at \( \left( 3, 4 \right) \)
+\end{problem}
+
+Solution: \\
+The normal of the tangent line \( \ell \) is \( \mathbf{n} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}  \). If \( \mathbf{x} \) is a point on
+\( \ell \) other than \( \left( 3, 4 \right) \), then \( \mathbf{n} \cdot \left( \mathbf{x} - \mathbf{n} \right) = 0\). So, \( \ell \) has the equation
+\( 3x + 4y - 25 = 0 \). The equation of \( \sigma_{\ell} \) has the form
+
+\begin{align*}
+  \sigma_{\ell} &= \begin{pmatrix} x \\ y \end{pmatrix} - \frac{2}{25} \begin{pmatrix} 3 \left( 3x + 5y - 25 \right) \\  4 \left( 3x + 4y - 25 \right) \end{pmatrix} \\
+                &= \frac{1}{25} \begin{pmatrix} 4^{2} - 3^{3} & -2 \cdot 3 \cdot 4 \\ -2 \cdot 3 \cdot 4 & 3^{3} - 4^{2} \end{pmatrix} \mathbf{x} + \begin{pmatrix} 6 \\ 8 \end{pmatrix} 
+.\end{align*}
+
+You can verify this answer by checking the reflection of something you intuitively know the answer for. 
+Half of a point on the line expect reflection to be 3/2 of that point.
+
+\begin{align*}
+  \sigma_{\ell} \begin{pmatrix} 3 \\ 4 \end{pmatrix} &= \begin{pmatrix} 3 \\ 4 \end{pmatrix}  
+\end{align*}
+and
+\begin{align*}
+  \sigma_{\ell} \left( \frac{2}{3} \begin{pmatrix} 3 \\ 4 \end{pmatrix}  \right) = -\frac{1}{2} \begin{pmatrix} 3 \\ 4 \end{pmatrix} + \begin{pmatrix} 6 \\ 8 \end{pmatrix} = \frac{3}{2} \begin{pmatrix} 3 \\ 4 \end{pmatrix}
+.\end{align*}
+
+\subsection{Points in a generic position}
+
+\begin{definition}
+ We say that \( m \) points \( P_1, P_2, \ldots P_m \in \mathbb{R}^{n} \)  are
+ in a generic position if the vectors \( \mathbf{p}_i - \mathbf{p}_1 \),
+  for \( i =2, 3, \ldots , m \). are linearly independent.
+  In particular \( n + 1 \) points in \( \mathbb{R}^{n} \) are in
+  generic position if every hyperplance contains at most \( n \)
+  of the \( n + 1 \) points.
+\end{definition}
+
+\begin{theorem}
+  Following are results about generic points:
+  \begin{enumerate}
+    \item An isometry on \( \mathbb{R}^{n} \) that fixes \( n + 1 \) points in generic position is
+  the identity map
+  \item An isometry on \( \mathbb{R}^{n} \) that fixes \( n \) points in generic position
+  is a reflection or the identity map.
+   \item Every isometry (in \( \mathbb{R}^{n} \) ) is a product of at most \( n + 1 \) reflections.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  We prove all these results:
+  \begin{enumerate}
+    \item If \( \tau   \) is an isometry, then by a theorem proved previously, there exists
+      and orthogonal matrix \( Q \in O_{n}\left(\mathbb{R}  \right) \), and a vector \( \mathbf{b} \) such that \( \tau \left( \mathbf{x} \right) = Q \mathbf{x} + \mathbf{b}\). Now suppose points
+      \( P_{1}, \ldots , P_{n+1} \) are in a generic position with position vectors
+      \( \mathbf{p}_1, \ldots , \mathbf{p}_{n+1} \) and \( \tau \left( P_{i} \right) = P_{i} \) for every \( i \). Then we have:
+
+      \[
+        Q \mathbf{p}_i + \mathbf{b} = \mathbf{p}_i
+      .\] 
+      for all \( 1 \le i \le n + 1 \). Thus subtracting \( Q\mathbf{p}_1 + \mathbf{b} = \mathbf{p}_{1} \), from equation above we get 
+      \begin{align*}
+        Q(\mathbf{p_1} - \mathbf{p_i}) = \mathbf{p}_1 - \mathbf{p}_{i} 
+      .\end{align*}
+        for all \( i = 2, \ldots , n+1 \). Hence, \( Q \) fixes every element in
+        the basis \( \mathbf{p}_1 - \mathbf{p}_2, \ldots , \mathbf{p}_1 - \mathbf{p}_{n+1} \) for \( \mathbb{R}^{n} \) so
+        \( Q = I_{n} \). Consequently, \( b = 0 \) and \( \tau = 1 \), proving (1).
+  \item Suppose \( \tau  \) fixes points \( P_{1}, P_{2}, \ldots , P_{n} \) which are in generic position.
+    Then the hyperplane.
+
+    \[
+      \mathbb{H} = \mathbf{x} = \mathbf{p}_1 + \lambda_{1} \left( \mathbf{p}_2 - \mathbf{p}_1 \right) + \ldots + \lambda_{n-1} \left(\mathbf{p}_n -\mathbf{p}_1 \right)
+    .\] 
+
+    where \( \lambda_{i} \in \mathbb{R} \).
+
+    contains all n points.If \( \tau \neq 1 \), then there exists a point \( R \) off \( \mathbb{H} \) such that
+    \( \tau \left( R \right) = R' \neq R\). So we have \( d(P_{i}, R) = d(\tau \left( P_i \right), \tau \left( R \right)) = d \left( P_i , R'\right)\)
+    for all \( i = 1,2, \ldots n \). Thus, for any point \( A(\mathbf{a}) \) in \( \mathbb{H} \), since its position vector 
+    \( \mathbf{a} = \mathbf{p}_1 + \lambda_{1}\mathbf{p}_{2} - \mathbf{p}_1 + \ldots + \lambda_{n-1} \mathbf{p}_n - \mathbf{p}_1 \) for some 
+    \( \lambda_{i} \), we see that
+    \begin{align*}
+      \tau \left( \mathbf{a} \right) &= Q \left( \mathbf{p}_1 + \lambda_1 \left(\mathbf{p}_2 - \mathbf{p}_1  \right) + \ldots \lambda_{n-1}(\mathbf{p}_n - \mathbf{p}_q) \right) + \mathbf{b} \\ 
+                                     &= \left[ Q \left( \mathbf{p}_1 \right) + \mathbf{b} \right] + \lambda_{1} \left( \mathbf{p}_1 - \mathbf{p}_1 \right) + \ldots \lambda_{n-1} (\mathbf{p}_n - \mathbf{p}_1) = \mathbf{a} 
+    .\end{align*}
+    The above simplification is because the \( \mathbf{b} \)'s will cancel out when you evaluate the \( Q(\mathbf{p}_i) \) values upon distributing \( Q \).
+    So, \( d (A, R) = d \left( \tau \left( A \right), \tau \left( R \right) \right) = d \left( A, R' \right).  \) This shows \( \mathbb{H} \) is the perpendicular
+    bisector of \( \overline{R R'} \). Hence \( \tau = \sigma_{\mathbb{H}}  \).
+
+  \item Suppose \( \tau  \) is an isometry, and fixes the points \( P_1, \ldots , P_{n-1} \) in generic position. Choose a point \( P = P_{0} \) so that \( P, P_{1}, \ldots P_{n-1} \) are in generic position.
+  Then \( P' = \tau \left( P \right) \neq P \).  (Proof incomplete right now complete from slides)
+
+\item Suppose \( \tau  \) is an isometry and let \( m \) be the maximal number of points in generic positions which \( \tau  \) fixes.
+  We apply a downward induction on \( m \). If \( m = n+1 \) or \( n \). we are done by (1) and (2).
+
+  Suppose now that \( m < n \) and the assertion is true for \( m+1 \). Consider a point \( P \) such that \( P' = \tau \left(P  \right) \neq P\) and
+  a hyperplane \( \mathbb{H} \) containing the \( m \) points in generic position and perpendicularly bisection \( \overline{P P'} \). Then \( \sigma_{\mathbb{H}} \tau  \) fixed \( m+1 \) points in generic position.
+  By induction, \( \sigma_{\mathbb{H}} \tau \) is a product of \( n-m \) reflections. Hence, \( \tau  \) is a 
+  product of \( n-m + 1 \) reflections. By induction, the assertion is true for all \( m = n+1,n \ldots ,1,0 \).
+
+  \end{enumerate}
+\end{proof}
+
+\begin{corollary}
+  Following results can be deduced from above.
+
+  \begin{enumerate}
+    \item Every plane isometry is a product of at most three reflections.
+    \item The group \( \mathscr{I} \left( \mathbb{R}^{n} \right) \) of isometries on \( \mathbb{R}^{n} \) is generated by reflections \( \mathbb{H}_{n,\mathbf{a}} \) for all \( \mathbf{0} \neq \mathbf{n},\mathbf{b} \in \mathbb{R}^{n} \).
+  \end{enumerate}
+
+ 
+\end{corollary}
+
+\begin{remark}
+  We call \( \mathscr{I} \left(\mathbb{R}^{n}  \right) \) a reflection group. The study of finite ferflection groups is an interesting research area in
+  mathemtics.
+\end{remark}
+
+\section{Translations and rotations in \( \mathbb{R}^{n} \)}
+
+\subsection{Tanslations}
+
+\begin{theorem}
+ An isometry \( \tau  \)  in \( \mathbb{R}^{n} \) is a translation if and only if \( \tau  \) is the product of two reflections 
+ in parallel hyperplanes.
+
+\end{theorem}
+
+\begin{proof}
+ Let \( \mathbb{H} = \mathbb{H}_{\mathbf{n},\mathbf{a}} \) and \( \mathbb{H}' = \mathbb{H}_{n}, \mathbf{b}\). Then, for all
+ \( \mathbf{x} \in \mathbb{R}^{n} \), we have
+
+ \begin{align*}
+   \sigma_{\mathbb{H}'} \sigma_{\mathbb{H}} \left(\mathbf{x}  \right) &= \sigma_{\mathbb{H}'} \left(\mathbf{x} - 2\frac{\mathbf{x \cdot \mathbf{n}}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} + 2 \frac{\mathbf{a} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n}  \right) \\
+                                                                      &= \left( \mathbf{x} - 2 \frac{\mathbf{x} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} + 2 \frac{\mathbf{a} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n}\right) -  2 \frac{ \left( \mathbf{x} - 2 \frac{\mathbf{x} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} + 2 \frac{\mathbf{a} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} \right) \cdot \mathbf{n} }{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} + 2 \frac{\mathbf{b} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} \\
+                                                                      &= \mathbf{x} + 2 \left( \frac{\mathbf{b} \cdot \mathbf{n}}{ \mathbf{n} \cdot \mathbf{n}} - \frac{\mathbf{a} \cdot \mathbf{n}}{\mathbf{n} \cdot \mathbf{n}} \right) \mathbf{n} \\ 
+                                                                      &= \mathbf{x} + 2proj_{n} \left(\mathbf{b} - \mathbf{a}  \right) \\
+                                                                      &= T_{2 proj_{\mathbf{n}} \left( \mathbf{b} - \mathbf{a} \right)} \mathbf{\left(\mathbf{x}  \right)}
+                                                                    .\end{align*}
+                                                                  (Hence, \( \sigma_{\mathbb{H}_{\mathbf{n}, \mathbf{b}}} \sigma_{\mathbb{H}_{\mathbf{n}, \mathbf{a}}}  = T_{2proj_{\mathbf{n}} \left( \mathbf{b} - \mathbf{a} \right)}\))
+\end{proof}
+
+Conversely, suppose \( \tau_{P,Q} \) be translation sneding \( P \left(\mathbf{p}  \right) \) to \( Q \).
+Let \( \mathbf{n} \) be a vector parallel to \( \overrightarrow{PQ} \) and \( M(\mathbf{m}) \) the 
+midpoint of \( \overrightarrow{PQ} \). Then we have,
+\[
+  \sigma_{\mathbb{H}_{\mathbf{n}, \mathbf{m}}} \sigma_{\mathbb{H}_{\mathbf{n}, \mathbf{p}}} = T_{2proj_{n}} \left( \mathbf{m} - \mathbf{p} \right) = T_{2(\mathbf{m - \mathbf{p}})} = T_{\mathbf{q} - \mathbf{p}} = \tau_{P,Q}
+.\] 
+
+We got \( T_{2proj_{n}}\left(\mathbf{m-p}\right) \) above from the same calculation as the proof.
+
+\subsection{Translations in \( \mathbb{R}^{2} \)}
+
+\begin{corollary}
+ A plane isometry is a translation if and only if it is a produ t of two reflections in parallel lines.
+\end{corollary}
+
+\begin{example}
+ For lines \( \ell_{1} : 2x + 3y = 0, \ell_{2} : 2x + 3y = 5 \) and \( \ell_{3}: 2x + 3y = 7\), find the vector \( \mathbf{b} \)and line \( \ell \) such that 
+ \( \sigma_{\ell_{2}} \sigma_{\ell_{2}} \sigma_{\ell_{1}} = \sigma_{\ell} \).
+\end{example}
+
+\begin{solution}
+ We have,
+ \begin{align*}
+  \mathbf{n} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+ .\end{align*}
+ and points \(A(1,1) \in  \ell_{2}\) and \( B(1,2) \in  \ell_{3} \). Then 
+ \begin{align*}
+   proj_{\mathbf{n}} \left( B - A \right) =  proj_{\mathbf{n}}\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{2}{13} \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+ .\end{align*}
+ and
+ \begin{align*}
+  \sigma_{\ell_{3}}\sigma_{\ell_{2}} = T_{\frac{4}{13} \begin{pmatrix} 2 \\ 3 \end{pmatrix} }
+ .\end{align*}
+ using the formula.
+
+
+  Thus,
+  \begin{align*}
+    \sigma_{\ell_{3}} \sigma_{\ell_{2}} \sigma_{\ell_{1}} &= T_{\frac{4}{13} \begin{pmatrix} 2 \\ 3 \end{pmatrix} } \sigma_{\ell_{1}} : \mathbf{x} \mapsto \frac{1}{13} \begin{pmatrix} 5 & -12 \\ -12 & -5 \end{pmatrix} \mathbf{x} + \frac{4}{13} \begin{pmatrix} 2 \\ 3 \end{pmatrix} \\
+                                                          &= \begin{pmatrix} x \\ y \end{pmatrix} - \frac{1}{13} \begin{pmatrix} 2 \times 2 \left( 2x + 3y -2 \right) \\ 2 \times 3 \left(2x + 3y - 2  \right) \end{pmatrix} 
+  .\end{align*}
+
+  Hence, \( \ell : 2x + 3y -2 = 0 \)
+
+\end{solution}
+
+\subsection{Rotations}
+
+\subsection{Rotations in \( \mathbb{R}^{2} \)}
+
+\begin{definition}
+ A rotation on \( \mathbb{R}^{2} \) about a point \( C \), through angle \( \theta   \), is the 
+ transformation that fixes \( C \) and otherwise sends a point \( P \) to a point \( P' \),
+where \( d(C,P) = d(C, P') \), and the angle from \( \overrightarrow{CP}  \) to \( \overrightarrow{CP'} \) is \( \theta  \) (in anti-clockwise direction
+if \( \theta >0 \), and clockwise if \( \theta <0 \)). We denote this transformation by \( \rho_{C, \theta } \).
+\end{definition}
+
+
+\begin{theorem}
+ An plane isometry is a rotation if and only if it is the product of two plane reflections in intersecting lines.
+ More precisesly,
+ \begin{enumerate}
+   \item if lines \( l,m \) intersect at \( C \), and the directed angle from \( l \) to \( m \) is 
+   \( \frac{\theta}{2} \in (-\frac{\pi}{2}, \frac{\pi}{2}] \), then \( \sigma_{m} \sigma_{l} = \rho_{C,\theta} \);
+ \item if lines \( p, q, r \) are concurrent, then there exists a line \( l \) such that 
+   \[
+    \sigma_{r} \sigma_{q} \sigma_{p} = \sigma_{l}
+   .\] 
+ \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  (2) follows easily from \( \left(1  \right) \). We now prove \( \left(1  \right) \). 
+  Let \( L \in  l, L \neq C \), and let \( M \in m \), \( M \neq C \). By a geometrical argument, one checks easily that
+  \( \sigma_{m} \sigma_{l} \left(C  \right) = C = \rho_{C,\theta }\left( C \right), \sigma_{m} \sigma_{l}\left(L  \right) = \sigma_{m} \left( L \right) = \rho_{C,\theta } \left(L  \right) \).
+
+  \begin{tikzpicture}
+  \draw[] (-1,-1) -- (2,2);
+  \draw[] (1,-1) -- (-2,2);
+  \node[above left] at (1,1) {$M$};
+  \node[] at (1,1) {\textbullet};
+  \node[] at (0.5,-0.5) {\textbullet};
+  \node[below left] at (0.5 , -0.5) {$L$};
+  \node[] at (0,0) {\textbullet};
+  \node[above=7pt] at (0,0) {$C$};
+  \node[below right] at (2,2) {$m$};
+  \node[below=7pt] at (1,-1) {$l$};
+  \end{tikzpicture}
+
+  Hence, \( \sigma_{m}, \sigma_{l} = \rho_{C, \theta} \) (Ask lect why, not sure how the generic point argument explained in lecture works.)
+\end{proof}
+
+\begin{corollary}
+  Some rotation results:
+  \begin{enumerate}
+    \item A non-identity rotation (on \( \mathbb{R}^{2} \))  fixes exactly one point.
+    \item A rotation with centre \( C \) fixes every circle with centre \( C. \)
+    \item The set of all rotations about a particular point (i.e. with centre at a particular point)
+      is a sugbroup of the group \( \mathscr{I} \left(\mathbb{R}^{2}  \right) \)
+      of isometries; further still, it is a commutative subgroup. 
+      In other words,
+      \[
+        \mathscr{R}_{C} \coloneqq \{\rho_{C, \theta } : \theta \in \mathbb{R}\} \le \mathscr{I}\left(\mathbb{R}^{2}  \right) 
+      .\] 
+      and
+      \[
+        \rho \rho' = \rho' \rho, \forall \rho, \rho' \in \mathscr{R}_{C}
+      .\] 
+  \end{enumerate}
+
+\end{corollary}
+
+\begin{theorem}
+\item The rotation \( \rho_{\mathbf{0}, \theta } : \mathbb{R}^{2} \to \mathbb{R}^{2} \) about the origin \( \mathbf{0} \) and through
+  the angle \( \theta  \) i the linear isomorphism \( T_{U,\mathbf{0}} \left( \mathbf{x} \right) = U \mathbf{x} \), where \( U \) is the following matrix:
+  \[
+    U = \begin{bmatrix} \cos \left( \theta  \right) & -\sin \left( \theta  \right) \\ \sin  \left( \theta  \right) & \cos \left( \theta  \right) \end{bmatrix} 
+  .\] 
+
+  Reason for this you apply rotation by \( \theta \) to the basis and that gives the matrix.
+
+\item If \( \mathbf{c} \) is the position vector of \( C \), then \( \rho_{C,\theta } = T_{\mathbf{c}}\left(\rho_{0, \theta }  \right)T_{-\mathbf{c}} \).
+  Hence, \( \rho_{C,\theta} \) has equation \( \rho_{C, \theta} \left( \mathbf{x} \right) = U \mathbf{x} + \mathbf{b} \), where \( U \) defines \( \rho_{\mathbf{0}, \theta } \) 
+  as in (1) and \( \mathbf{b} = \left(I - U  \right) \mathbf{c} \). Moreover, at the group level, we have \( \mathscr{R}_{C} = T_{\mathbf{c}}\mathscr{R}_{\mathbf{0}}T_{-\mathbf{c}}, \)
+  or \( \mathscr{R}_{C} \) is conjugate to \( \mathscr{R}_{0} \).
+\end{theorem}
+
+\begin{proof}
+  By the theorem above, we may assume that \( \rho_{0,\theta} = \rho_{m}, \rho_{l} \), where
+  \( l \) is the x-axis, and \( m \) has equation:
+  \[
+    \sin \left( \frac{\theta}{2} \right)X - \cos \left( \frac{\theta}{2} \right)Y = 0
+  .\] 
+\end{proof}
+Hence, \( \sigma_{m} \) has the equations:
+
+\begin{equation*}
+    \begin{cases}
+      x' = \left(1 - 2 \sin^2(\frac{\theta}{2})  \right)x + \left(2\sin \left(\frac{\theta}{2}  \right) \cos \left(\frac{\theta}{2}  \right)  \right)y= \left( \cos \theta  \right) x + \left( \sin \theta  \right)y \\
+      y' = \left( \sin \theta  \right)x - \left( \cos \theta  \right)y.
+    \end{cases}
+\end{equation*}
+
+Also, \( \sigma_{l} \) has (more obvious) equation: \( X' = X \), \( Y' = -Y\).
+Hence, by multiplying matrices, we can see that:
+
+\begin{align*}
+  \sigma_{m}\sigma_{l} = \begin{bmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \cos \theta  \end{bmatrix} \mathbf{x} = U \mathbf{x}
+.\end{align*}
+
+proving (1).
+
+
+
+
