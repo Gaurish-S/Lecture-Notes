@@ -84,7 +84,7 @@ satisfies Associativity, Existence of Identity and Inverse.
   
  \end{proof}
 
- \subsubsection{General Reflection Formula}
+ \subsection{General Reflection Formula}
 \begin{theorem}
   If \( \mathbb{H} = \mathbb{H}_{\mathbf{n}, \mathbf{a}} \), the there exist \( Q = I - \frac{2}{\mathbf{n} \cdot \mathbf{n}} \mathbf{n} \mathbf{n}^{T} \in O_{n}\left(\mathbb{R}  \right)  \) and \( \mathbf{b} = 2 \frac{\mathbf{a} \cdot \mathbf{n}}{ \mathbf{n} \cdot \mathbf{n}}  \mathbf{n} \)
 
@@ -123,7 +123,7 @@ Now continuing from (2) by substituting,
 Since \( Q  \) is symmetric (difference between two symmetric matrices) and \( Q Q = I \) 
 % is normal here unit length now sure why the 2nd term of diff is symm. 
 
-\subsubsection{Reflections in \( \mathbb{R}^{2} \)}
+\subsection{Reflections in \( \mathbb{R}^{2} \)}
 
 \begin{corollary}
  In \( \mathbb{R}^{2} \), if line \( \ell \) has equation \( aX + bX + c = 0 \), then ther 
@@ -144,7 +144,7 @@ Since \( Q  \) is symmetric (difference between two symmetric matrices) and \( Q
    second formula
 \end{proof}
 
-\subsubsection{Example reflection calculation}
+\subsection{Example reflection calculation}
 
 \begin{problem}
  Find the equation of a reflection in the line tangent to the circle \( x^{2} + y_{2} = 25 \) at \( \left( 3, 4 \right) \)
@@ -406,16 +406,16 @@ if \( \theta >0 \), and clockwise if \( \theta <0 \)). We denote this transforma
     U = \begin{bmatrix} \cos \left( \theta  \right) & -\sin \left( \theta  \right) \\ \sin  \left( \theta  \right) & \cos \left( \theta  \right) \end{bmatrix} 
   .\] 
 
-  Reason for this you apply rotation by \( \theta \) to the basis and that gives the matrix.
+  Reason for \( U \) being this you apply rotation by \( \theta \) to the basis and that gives the matrix as \( \rho_{0, \theta } \) is a linear map (one of the properties of isometries).
 
-\item If \( \mathbf{c} \) is the position vector of \( C \), then \( \rho_{C,\theta } = T_{\mathbf{c}}\left(\rho_{0, \theta }  \right)T_{-\mathbf{c}} \).
+\item If \( \mathbf{c} \) is the position vector of \( C \), then \( \rho_{C,\theta } = T_{\mathbf{c}}\left(\rho_{0, \theta }  \right)T_{-\mathbf{c}} \) (Ask lect, can you explain why this holds).
   Hence, \( \rho_{C,\theta} \) has equation \( \rho_{C, \theta} \left( \mathbf{x} \right) = U \mathbf{x} + \mathbf{b} \), where \( U \) defines \( \rho_{\mathbf{0}, \theta } \) 
   as in (1) and \( \mathbf{b} = \left(I - U  \right) \mathbf{c} \). Moreover, at the group level, we have \( \mathscr{R}_{C} = T_{\mathbf{c}}\mathscr{R}_{\mathbf{0}}T_{-\mathbf{c}}, \)
   or \( \mathscr{R}_{C} \) is conjugate to \( \mathscr{R}_{0} \).
 \end{theorem}
 
 \begin{proof}
-  By the theorem above, we may assume that \( \rho_{0,\theta} = \rho_{m}, \rho_{l} \), where
+  By the theorem above, we may assume that \( \rho_{0,\theta} = \sigma_{m}, \sigma_{l} \), where
   \( l \) is the x-axis, and \( m \) has equation:
   \[
     \sin \left( \frac{\theta}{2} \right)X - \cos \left( \frac{\theta}{2} \right)Y = 0
@@ -438,6 +438,19 @@ Hence, by multiplying matrices, we can see that:
 .\end{align*}
 
 proving (1).
+
+Maintain the notation in the proof of \( \left(1  \right) \).
+For (2), we have
+
+\[
+  T_{\mathbf{c}}\rho_{\mathbf{0},\theta }T_{-c} = T_{\mathbf{c}}\sigma_{m} \sigma_{l} T_{-\mathbf{c}} 
+  = \left( T_{\mathbf{c}}\sigma_{m}T_{-\mathbf{c}} \right) \left( T_{\mathbf{c}}\sigma_{l}T_{-\mathbf{c}} \right)
+  = \sigma_{m'}\sigma_{l'} = \rho_{C, \theta}
+.\] 
+
+(Ask lect about \(\left( T_{\mathbf{c}}\sigma_{m}T_{-\mathbf{c}} \right) \left( T_{\mathbf{c}}\sigma_{l}T_{-\mathbf{c}} \right)
+   \sigma_{m'}\sigma_{l'} = \rho_{C, \theta}\))
+
 
 
 
