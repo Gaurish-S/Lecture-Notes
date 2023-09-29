@@ -80,47 +80,21 @@
 % Environments
 \makeatother
 % For box around Definition, Theorem, \ldots
-\usepackage{mdframed}
-\mdfsetup{skipabove=1em,skipbelow=0em}
 \theoremstyle{definition}
-\newmdtheoremenv[nobreak=true]{definitie}{Definitie}
-\newmdtheoremenv[nobreak=true]{eigenschap}{Eigenschap}
-\newmdtheoremenv[nobreak=true]{gevolg}{Gevolg}
-\newmdtheoremenv[nobreak=true]{lemma}{Lemma}
-\newmdtheoremenv[nobreak=true]{propositie}{Propositie}
-\newmdtheoremenv[nobreak=true]{stelling}{Stelling}
-\newmdtheoremenv[nobreak=true]{wet}{Wet}
-\newmdtheoremenv[nobreak=true]{postulaat}{Postulaat}
-\newmdtheoremenv{conclusie}{Conclusie}
-\newmdtheoremenv{toemaatje}{Toemaatje}
-\newmdtheoremenv{vermoeden}{Vermoeden}
-\newtheorem*{herhaling}{Herhaling}
-\newtheorem*{intermezzo}{Intermezzo}
-\newtheorem*{notatie}{Notatie}
-\newtheorem*{observatie}{Observatie}
-\newtheorem*{oef}{Oefening}
-\newtheorem*{opmerking}{Opmerking}
-\newtheorem*{praktisch}{Praktisch}
-\newtheorem*{probleem}{Probleem}
-\newtheorem*{terminologie}{Terminologie}
-\newtheorem*{toepassing}{Toepassing}
-\newtheorem*{uovt}{UOVT}
-\newtheorem*{vb}{Voorbeeld}
-\newtheorem*{vraag}{Vraag}
-
-\newmdtheoremenv[nobreak=true]{definition}{Definition}
-\newtheorem*{eg}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem*{solution}{Solution}
 \newtheorem*{notation}{Notation}
 \newtheorem*{previouslyseen}{As previously seen}
 \newtheorem*{remark}{Remark}
 \newtheorem*{note}{Note}
-\newtheorem*{problem}{Problem}
+\newtheorem{problem}{Problem}
 \newtheorem*{observe}{Observe}
-\newtheorem*{property}{Property}
+\newtheorem{property}{Property}
 \newtheorem*{intuition}{Intuition}
-\newmdtheoremenv[nobreak=true]{prop}{Proposition}
-\newmdtheoremenv[nobreak=true]{theorem}{Theorem}
-\newmdtheoremenv[nobreak=true]{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
 
 % End example and intermezzo environments with a small diamond (just like proof
 % environments end with a small square)
@@ -279,6 +253,10 @@
 % Fix some stuff
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
+
+% no inline equation line breaks
+\binoppenalty=10000 
+\relpenalty=10000 
 
 
 % My name
