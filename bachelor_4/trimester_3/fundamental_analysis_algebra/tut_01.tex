@@ -126,8 +126,49 @@ are perpendicular iff \( ad + be = 0 \).
 \end{solution}
 
 \subsection{Problem 6}
-A multiplication for finite gorup is often called Caley table. 
+A multiplication for finite gorup is often called Cayley table. Find the cayley table for the group \( V_{4} = \{1, \sigma , \alpha , \beta \}  \) which
+is defined by the transformations
+\[
+  1 \left( x,y \right) = \left( x,y \right), \sigma \left( x, y \right) = \left( -x, -y \right), \alpha \left(x, y  \right) = \left(x, -y  \right), \beta \left( x,y \right) = \left( -x,y \right)
+.\] 
+For all \( \left( x,y \right) \in \mathbb{R}^{2} \).
 
+\begin{solution}
 
+  \begin{tabular}{ c c c c c }
+    \( V_{4} \) & 1 & \( \sigma  \) & \( \alpha  \) & \( \beta  \) \\
+    1 & 1 & \( \sigma  \) & \( \alpha  \) & \( \beta  \) \\
+  \( \sigma  \) & \( \sigma  \) & 1 & \( \beta  \) & \( \alpha  \) \\
+  \( \alpha  \) & \( \alpha   \) & \( \beta   \) & \(1  \) & \( \sigma  \) \\
+  \( \beta  \) & \( \beta  \) & \( \alpha   \)& \( \sigma  \) & 1
+   
+  \end{tabular}
 
+\end{solution}
 
+\subsection{Problem 7}
+
+Suppose \( A,B,C \) are non collinear points. Then \( \tau_{A,B} = \tau_{C,D} \) \( \iff \square ABCD\)  is a parellelogram.
+
+\includegraphics{./figures/q7Plgm.pdf}
+
+\begin{solution}
+  We show forward implication first.
+  \[
+    \tau_{A,B} = \tau_{C,D} \implies \overrightarrow{AB} = \overrightarrow{CD}
+  .\] 
+
+  So, \( | \overrightarrow{AB} | = |  \overrightarrow{CD} | \) and \( AB \parallel CD \).
+  Now, it remains to show \( AB \) and \( CD \) do not lie on the same line.
+  We know that \( A,B,C \) are non collinear. We show that \( A,B,D \) are non collinear.
+ Assume that \( A,B,D  \) are collinear, then \( A, D, C \) are non collinear and form a triangle. Then \( CD \) intersects \( AD \)
+ and hence  \( \ell(AB) \) as \( B \) lies on \( \ell(AD) \). If \( CD \) intersects \( \ell(AB) \) then \( AB \) and \( CD \)
+ cannot be parallel which is a contradiction as we have already proven them to be parallel.
+ Therefore our assumption that \( A,B,D \) are collinear is false. So, \( A,B,C \) are non collinear and \( A,B,D \)
+ are non collinear. Hence \( CD \) does not lie \( \ell(AB) \). Therefore \( AB \) and \( CD \) are congruent and parallel sides 
+ of a parallelogram \( CABD \).
+
+ Backward implication follows immediately from the congruence of \( AB \) and \( CD \) and therefore their vectors being equal 
+ as they are two sides of a parallelogram. Giving is the equality of the isometry.
+
+ \end{solution}
